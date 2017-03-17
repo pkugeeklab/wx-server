@@ -11,7 +11,6 @@ url = url.replace('APPSECRET', APPSECRET)
 
 def getToken():
     token = None
-    print(os.path.getctime('token') - time.time())
     if os.path.exists('token') and time.time() - os.path.getctime('token') < 7000:
         token = open('token', 'r').readline().strip()
     else:
@@ -23,6 +22,7 @@ def getToken():
             token = data['access_token']
             open('token', 'w').write(token)
     return token
+
 
 if __name__ == '__main__':
     Atoken = getToken()
