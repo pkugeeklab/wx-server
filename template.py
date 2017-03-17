@@ -44,6 +44,6 @@ def generate(key, data):
             'me': data['me'],
             'CreateTime': int(time.time()),
             'Title': data['code'],
-            'Content': data['description'] + data['code']
+            'Text': data['description'] + data['code']
         }
         return TEXT % valueDict
