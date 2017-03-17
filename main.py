@@ -56,7 +56,7 @@ def reply():
         print(info.findtext('ScanResult'))
         code = info.findtext('ScanResult')
         if code:
-            item = items.find_one({'code': code})
+            item = items.find_one({'code': code[1:]})
             if item:
                 description = item['description']
             else:
