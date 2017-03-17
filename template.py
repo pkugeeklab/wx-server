@@ -36,7 +36,7 @@ def generate(key, data):
             'Title': '绑定',
             'Description': '点击跳往绑定页面',
             'Url': 'http://www.baidu.com/s?wd=%s' % data['OpenID']
-            }
+        }
         return NEWS % valueDict
     elif key == 'intro':
         valueDict = {
@@ -44,7 +44,6 @@ def generate(key, data):
             'me': data['me'],
             'CreateTime': int(time.time()),
             'Title': data['code'],
-            'Description': '点击跳往绑定页面',
-            'Url': 'http://www.baidu.com/s?wd=%s' % data['code']
-            }
-        return NEWS % valueDict
+            'Content': data['description'] + data['code']
+        }
+        return TEXT % valueDict
