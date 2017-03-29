@@ -5,7 +5,7 @@ import flask
 import pymongo
 
 from template import generate
-
+from secret import *
 app = flask.Flask(__name__)
 client = pymongo.MongoClient('localhost', 27017)
 db = client['geeklab']
@@ -14,13 +14,12 @@ items = db['items']
 
 @app.route('/', methods=['GET'])
 def main():
-    token = 'xuliangwei'
     signature = flask.request.args['signature']
     timestamp = flask.request.args['timestamp']
     nonce = flask.request.args['nonce']
     if 'echostr' in flask.request.args:
         echostr = flask.request.args['echostr']
-        s = ''.join(sorted([token, timestamp, nonce]))
+        s = ''.join(sorted([Token, timestamp, nonce]))
         s = s.encode()
         print('s=', s)
         r = hashlib.sha1(s)
@@ -74,4 +73,4 @@ def reply():
 
 
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True)

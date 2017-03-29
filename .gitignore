@@ -1,3 +1,5 @@
 __pycache__/
+logs/
+run/
+secret.conf
 token
-Sample.py

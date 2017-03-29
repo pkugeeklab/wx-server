@@ -2,12 +2,11 @@ from urllib import request
 import os
 import time
 import json
+from secret import *
+url = 'https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=AppID&secret=AppSecret'
+url = url.replace('AppID', AppID)
+url = url.replace('AppSecret', AppSecret)
 
-APPID = 'wxfcaf6f0171c0479b'
-APPSECRET = 'e435add6f446c3cd9b474ed15c5a36a3'
-url = 'https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=APPID&secret=APPSECRET'
-url = url.replace('APPID', APPID)
-url = url.replace('APPSECRET', APPSECRET)
 
 def getToken():
     token = None
@@ -26,4 +25,5 @@ def getToken():
 
 if __name__ == '__main__':
     Atoken = getToken()
+    assert Atoken
     print(Atoken)
