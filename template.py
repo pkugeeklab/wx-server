@@ -27,7 +27,7 @@ TEXT = '''
 '''
 
 
-def generate(key, data):
+def generate(data, key=None, msgType=None):
     if key == 'binding':
         valueDict = {
             'OpenID': data['OpenID'],
@@ -37,13 +37,22 @@ def generate(key, data):
             'Description': '点击跳往绑定页面',
             'Url': 'http://www.baidu.com/s?wd=%s' % data['OpenID']
         }
+        msgType = NEWS if not msgType else msgType
         return NEWS % valueDict
     elif key == 'intro':
         valueDict = {
             'OpenID': data['OpenID'],
             'me': data['me'],
             'CreateTime': int(time.time()),
-            'Title': data['code'],
             'Text': data['description'] + data['code']
+        }
+        msgType = TEXT if not msgType else msgType
+        return TEXT % valueDict
+    else:
+        valueDict = {
+            'OpenID': data['OpenID'],
+            'me': data['me'],
+            'CreateTime': int(time.time()),
+            'Text': '功能开发中，敬请期待~'
         }
         return TEXT % valueDict

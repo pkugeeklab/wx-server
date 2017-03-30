@@ -46,10 +46,10 @@ def reply():
     EventKey = xml_tree.findtext('EventKey')
     print(EventKey)
     if EventKey == 'binding':
-        data = generate(EventKey, {'OpenID': FromUserName, 'me': ToUserName})
+        data = generate({'OpenID': FromUserName, 'me': ToUserName}, EventKey)
         print(data.encode())
         return data
-    if EventKey == 'intro':
+    elif EventKey == 'intro':
         info = xml_tree.find('ScanCodeInfo')
         print(info.findtext('ScanType'))
         print(info.findtext('ScanResult'))
@@ -60,15 +60,18 @@ def reply():
                 description = item['description']
             else:
                 description = 'No description'
-            data = generate(
-                EventKey, {'OpenID': FromUserName,
+            data = generate({'OpenID': FromUserName,
                            'me': ToUserName,
                            'code': code,
-                           'description': description})
+                           'description': description}, EventKey)
             print(data.encode())
             return data
         else:
             return ''
+    else:
+        data = generate({'OpenID': FromUserName,
+                       'me': ToUserName}, EventKey)
+        return data
     return ''
 
 

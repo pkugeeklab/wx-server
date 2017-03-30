@@ -7,23 +7,23 @@
                     "key": "binding"
                 },
                 {
-                    "type": "view",
+                    "type": "click",
                     "name": "我的资料",
-                    "url": "http://www.pku.edu.cn/"
+                    "key": "profile"
                 }
             ]
         },
         {
             "name": "预约",
             "sub_button": [{
-                    "type": "view",
+                    "type": "click",
                     "name": "开始预约",
-                    "url": "http://www.pku.edu.cn/"
+                    "key": "app"
                 },
                 {
                     "type": "click",
                     "name": "我的预约",
-                    "key": "rselfmenu_0_1"
+                    "key": "myApp"
                 }
             ]
         },
@@ -38,12 +38,12 @@
                 {
                     "type": "view",
                     "name": "实验室介绍",
-                    "url": "http://v.qq.com/"
+                    "url": "http://www.pku.edu.cn/"
                 },
                 {
                     "type": "click",
                     "name": "联系我们",
-                    "key": "V1001_GOOD"
+                    "key": "contact"
                 }
             ]
         }
