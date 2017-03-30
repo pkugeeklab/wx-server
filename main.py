@@ -49,7 +49,7 @@ def reply():
     if Event == 'subscribe':
         data = generate({'OpenID': FromUserName,
                        'me': ToUserName,
-                       'text', '欢迎关注哦！北大小极为您服务~'}, EventKey)
+                       'text': '欢迎关注哦！北大小极为您服务~'}, EventKey)
         return data
     else:
         if EventKey == 'binding':
