@@ -43,35 +43,42 @@ def reply():
     FromUserName = xml_tree.findtext('FromUserName')
     print(FromUserName)
     ToUserName = xml_tree.findtext('ToUserName')
+    Event = xml_tree.findtext('Event')
     EventKey = xml_tree.findtext('EventKey')
-    print(EventKey)
-    if EventKey == 'binding':
-        data = generate({'OpenID': FromUserName, 'me': ToUserName}, EventKey)
-        print(data.encode())
+    print(Event, EventKey)
+    if Event == 'subscribe':
+        data = generate({'OpenID': FromUserName,
+                       'me': ToUserName,
+                       'text', '欢迎关注哦！北大小极为您服务~'}, EventKey)
         return data
-    elif EventKey == 'intro':
-        info = xml_tree.find('ScanCodeInfo')
-        print(info.findtext('ScanType'))
-        print(info.findtext('ScanResult'))
-        code = info.findtext('ScanResult')
-        if code:
-            item = items.find_one({'code': code[1:]})
-            if item:
-                description = item['description']
-            else:
-                description = 'No description'
-            data = generate({'OpenID': FromUserName,
-                           'me': ToUserName,
-                           'code': code,
-                           'description': description}, EventKey)
+    else:
+        if EventKey == 'binding':
+            data = generate({'OpenID': FromUserName, 'me': ToUserName}, EventKey)
             print(data.encode())
             return data
+        elif EventKey == 'intro':
+            info = xml_tree.find('ScanCodeInfo')
+            print(info.findtext('ScanType'))
+            print(info.findtext('ScanResult'))
+            code = info.findtext('ScanResult')
+            if code:
+                item = items.find_one({'code': code[1:]})
+                if item:
+                    description = item['description']
+                else:
+                    description = 'No description'
+                data = generate({'OpenID': FromUserName,
+                               'me': ToUserName,
+                               'code': code,
+                               'description': description}, EventKey)
+                print(data)
+                return data
+            else:
+                return ''
         else:
-            return ''
-    else:
-        data = generate({'OpenID': FromUserName,
-                       'me': ToUserName}, EventKey)
-        return data
+            data = generate({'OpenID': FromUserName,
+                           'me': ToUserName}, EventKey)
+            return data
     return ''
 
 

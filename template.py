@@ -53,6 +53,6 @@ def generate(data, key=None, msgType=None):
             'OpenID': data['OpenID'],
             'me': data['me'],
             'CreateTime': int(time.time()),
-            'Text': '功能开发中，敬请期待~'
+            'Text': data.get('text', '功能开发中，敬请期待~')
         }
         return TEXT % valueDict
