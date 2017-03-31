@@ -6,6 +6,8 @@ import pymongo
 
 from template import generate
 from secret import *
+from getAccessToken import getToken
+from getUserInfo import getUserInfo
 app = flask.Flask(__name__)
 client = pymongo.MongoClient('localhost', 27017)
 db = client['geeklab']
@@ -47,12 +49,14 @@ def reply():
     EventKey = xml_tree.findtext('EventKey')
     print(Event, EventKey)
     if Event == 'subscribe':
+        print(getUserInfo(FromUserName))
         data = generate({'OpenID': FromUserName,
                        'me': ToUserName,
                        'text': '欢迎关注哦！北大小极为您服务~'}, EventKey)
         return data
     else:
-        if EventKey == 'binding':
+        if EventKey == 'binding_admin':
+            userdata =
             data = generate({'OpenID': FromUserName, 'me': ToUserName}, EventKey)
             print(data.encode())
             return data
