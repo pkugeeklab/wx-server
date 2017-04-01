@@ -56,7 +56,6 @@ def reply():
         return data
     else:
         if EventKey == 'binding_admin':
-            userdata =
             data = generate({'OpenID': FromUserName, 'me': ToUserName}, EventKey)
             print(data.encode())
             return data

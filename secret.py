@@ -1,6 +1,5 @@
 import os
 import configparser
-import ipdb
 assert os.path.exists('secret.conf'), 'Config error'
 parser = configparser.ConfigParser()
 parser.read('secret.conf')
