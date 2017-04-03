@@ -7,7 +7,7 @@ import pymongo
 from template import generate
 from secret import *
 from getAccessToken import getToken
-from getUserInfo import getUserInfo
+from user.getUserInfo import getUserInfo
 app = flask.Flask(__name__)
 client = pymongo.MongoClient('localhost', 27017)
 db = client['geeklab']
