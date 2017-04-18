@@ -1,34 +1,22 @@
 {
     "button": [{
-            "name": "用户",
+            "name": "极身份",
             "sub_button": [{
                     "type": "click",
-                    "name": "绑定",
+                    "name": "绑定帐号",
                     "key": "binding"
-                },
-                {
-                    "type": "click",
-                    "name": "我的资料",
-                    "key": "profile"
-                }
-            ]
+                }]
         },
         {
-            "name": "预约",
+            "name": "极活动",
             "sub_button": [{
                     "type": "click",
-                    "name": "开始预约",
-                    "key": "app"
-                },
-                {
-                    "type": "click",
-                    "name": "我的预约",
-                    "key": "myApp"
-                }
-            ]
+                    "name": "讲座信息",
+                    "key": "speech"
+                }]
         },
         {
-            "name": "更多功能",
+            "name": "极视野",
             "sub_button": [{
                     "type": "scancode_waitmsg",
                     "name": "设备介绍",
@@ -44,6 +32,11 @@
                     "type": "click",
                     "name": "联系我们",
                     "key": "contact"
+                },
+                {
+                    "type": "click",
+                    "name": "留言",
+                    "key": "message"
                 }
             ]
         }
