@@ -1,51 +1,61 @@
 {
   "button": [
     {
-      "name": "用户",
+      "name": "极身份",
       "sub_button": [{
         "type": "click",
-        "name": "绑定",
+        "name": "审核身份",
         "key": "binding"
       },
       {
         "type": "click",
-        "name": "我的资料",
+        "name": "预约列表",
         "key": "profile"
       }
     ]},
     {
-      "name": "预约",
+      "name": "极活动",
       "sub_button": [
         {
           "type": "click",
-          "name": "审核预约",
+          "name": "财务记录",
           "key": "key"
         },
         {
           "type": "click",
-          "name": "我的预约",
+          "name": "查看报名",
+          "key": "myApp"
+        },
+        {
+          "type": "click",
+          "name": "留言列表",
           "key": "myApp"
         }]
     },
     {
-      "name": "更多功能",
-      "sub_button": [
-        {
-          "type": "scancode_waitmsg",
-          "name": "设备介绍",
-          "key": "intro",
-          "sub_button": []
-        },
-        {
-          "type": "view",
-          "name": "实验室介绍",
-          "url": "http://pku.edu.cn/"
-        },
-        {
-          "type": "click",
-          "name": "联系我们",
-          "key": "contact"
-        }]
+      "name": "极视野",
+      "sub_button": [{
+              "type": "scancode_waitmsg",
+              "name": "设备介绍",
+              "key": "intro",
+              "sub_button": []
+          },
+          {
+              "type": "view",
+              "name": "实验室介绍",
+              "url": "http://www.pku.edu.cn/"
+          },
+          {
+              "type": "click",
+              "name": "联系我们",
+              "key": "contact"
+          },
+          {
+              "type": "click",
+              "name": "留言",
+              "key": "message"
+          }
+      ]
     }
   ],
   "matchrule": {

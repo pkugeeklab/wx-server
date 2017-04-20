@@ -7,6 +7,7 @@ from tag.newTag import newTag
 from tag.updateTag import updateTag
 from tag.getTagUserlist import getTagUserlist
 from user.getUserlist import getUserlist
+from user.addToTag import addToTag
 if __name__ == '__main__':
     module = sys.argv[1]
     assert module in vars(), 'Method is not accessable.'
