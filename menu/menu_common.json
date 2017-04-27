@@ -24,14 +24,14 @@
                     "sub_button": []
                 },
                 {
-                    "type": "view",
+                    "type": "view_limited",
                     "name": "实验室介绍",
-                    "url": "http://www.pku.edu.cn/"
+                    "media_id": "xMYS0NBbzyWWX4gZh9i02ObLH1f3JhN64RZSqbeAy5c"
                 },
                 {
-                    "type": "click",
+                    "type": "view_limited",
                     "name": "联系我们",
-                    "key": "contact"
+                    "media_id": "xMYS0NBbzyWWX4gZh9i02F4KdrGjZFMZa4YBPYmV93Q"
                 },
                 {
                     "type": "click",
