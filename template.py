@@ -35,7 +35,7 @@ def generate(data, key=None, msgType=None):
             'CreateTime': int(time.time()),
             'Title': '绑定',
             'Description': '点击跳往绑定页面',
-            'Url': 'http://geeklab.pku.edu.cn/register?wechat={}' % data['OpenID']
+            'Url': 'http://geeklab.pku.edu.cn/register?wechat=%s' % data['OpenID']
         }
         msgType = NEWS if not msgType else msgType
         return NEWS % valueDict
