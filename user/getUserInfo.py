@@ -11,7 +11,8 @@ def getUserInfo(openid):
     req = request.Request(url)
     res = request.urlopen(req)
     data = res.read().decode()
-    return data
+    userinfo = json.loads(data)
+    return userinfo
 
 if __name__ == '__main__':
     openid = sys.argv[1]

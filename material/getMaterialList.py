@@ -23,6 +23,7 @@ def getMaterialList(kind, offset, count):
     ret = {}
     ret['count'] = data['item_count']
     ret['items'] = [{'id': item['media_id'],
-                     'title': item['content']['news_item'][0]['title']}
+                     'title': item['content']['news_item'][0]['title'],
+                     'url': item['content']['news_item'][0]['url']}
                     for item in data['item']]
     return ret

@@ -10,6 +10,7 @@ from tag.getTagUserlist import getTagUserlist
 from user.getUserlist import getUserlist
 from user.addToTag import addToTag
 from material.getMaterialList import getMaterialList
+from notification.newNotification import newNotification
 
 if __name__ == '__main__':
     module = sys.argv[1]

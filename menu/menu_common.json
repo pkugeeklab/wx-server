@@ -18,15 +18,14 @@
         {
             "name": "极视野",
             "sub_button": [{
-                    "type": "scancode_waitmsg",
+                    "type": "view",
                     "name": "设备介绍",
-                    "key": "intro",
-                    "sub_button": []
+                    "url": "http://geeklabpku.flzhan.com/text18.html"
                 },
                 {
                     "type": "view_limited",
                     "name": "实验室介绍",
-                    "media_id": "xMYS0NBbzyWWX4gZh9i02ObLH1f3JhN64RZSqbeAy5c"
+                    "media_id": "xMYS0NBbzyWWX4gZh9i02HOf-L9eFnobmrXh9-0oPWw"
                 },
                 {
                     "type": "view_limited",

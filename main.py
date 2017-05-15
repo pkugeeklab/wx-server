@@ -8,6 +8,7 @@ from template import generate
 from secret import *
 from getAccessToken import getToken
 from user.getUserInfo import getUserInfo
+from notification.newNotification import newNotification
 app = flask.Flask(__name__)
 client = pymongo.MongoClient('localhost', 27017)
 db = client['geeklab']
@@ -84,6 +85,21 @@ def reply():
             return data
     return ''
 
+@app.route('/notification', methods=['POST'])
+def notification_apply():
+    if flask.request.remote_addr != '127.0.0.1':
+        return ''
+    index = int(flask.request.form.get('index'))
+    touser = flask.request.form.get('touser')
+    key1 = flask.request.form.get('keyword1')
+    key2 = flask.request.form.get('keyword2')
+    key3 = flask.request.form.get('keyword3')
+    key4 = flask.request.form.get('keyword4')
+    first = flask.request.form.get('first')
+    remark = flask.request.form.get('remark')
+    templates = ['notification/apply.json']
+    newNotification(templates[index], touser, key1, key2, key3, key4, first, remark)
+    return 'OK'
 
 if __name__ == '__main__':
     app.run(debug=True)

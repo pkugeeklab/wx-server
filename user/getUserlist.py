@@ -1,7 +1,7 @@
 from urllib import request, parse
 import json
 from getAccessToken import getToken
-
+from user.getUserInfo import getUserInfo
 
 def getUserlist():
     ACCESS_TOKEN = getToken()
@@ -10,4 +10,6 @@ def getUserlist():
     req = request.Request(url)
     res = request.urlopen(req)
     data = res.read().decode()
-    return data
+    users = json.loads(data)['data']['openid']
+    users = {uid: getUserInfo(uid)['nickname'] for uid in users}
+    return users
